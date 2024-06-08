@@ -5,16 +5,16 @@ spring:
   application:
     name: GameInfoStore
   datasource:
-    url: jdbc:postgresql://localhost:5432/Test
+    url: jdbc:postgresql://localhost:5432/BaumansGate
     username: postgres
     password: pass
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true

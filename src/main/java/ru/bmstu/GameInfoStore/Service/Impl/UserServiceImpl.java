@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.bmstu.GameInfoStore.Entity.User;
 import ru.bmstu.GameInfoStore.Repository.UserRepository;
 import ru.bmstu.GameInfoStore.Service.UserService;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.List;
 
 @Service
@@ -13,6 +13,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private UserRepository repository;
+
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<User> findAllUsers() {
@@ -29,6 +31,7 @@ public class UserServiceImpl implements UserService {
         if(findUserByLogin(user.getLogin()) != null){
             return "Пользователь с таким логином уже существует.";
         }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         repository.save(user);
         return "Пользователь был успешно создан.";
     }

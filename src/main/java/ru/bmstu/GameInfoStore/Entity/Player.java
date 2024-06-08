@@ -17,5 +17,7 @@ public class Player {
 
     private String login;
 
+    private int level;
+
 
 }

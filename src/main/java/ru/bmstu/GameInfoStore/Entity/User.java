@@ -15,8 +15,10 @@ public class User {
     @Column(unique = true)
     private String login;
 
+    private String password;
+
     private String email;
 
-    private String nickname;
+    private String roles;
 
 }

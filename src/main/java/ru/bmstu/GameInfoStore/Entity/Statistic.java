@@ -5,17 +5,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "maps")
-public class Map {
+@Table(name = "statistics")
+public class Statistic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer mapId;
+    private Integer gameId;
 
-    private String mapName;
+    private String gameStatus;
 
-    private String login;
+    private String playerName;
 
-    private int size;
+    private int mapId;
 
 }
